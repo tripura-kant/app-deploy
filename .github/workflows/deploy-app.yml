@@ -1,18 +1,17 @@
 name: deploy-app
 
-
 on:
+  pull_request:
+    branches:
+      - main
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main      
 
 jobs:
-  print-name:
-    runs-on: Ubuntu
+  deploy-app:
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Print message
-        run: echo "Deploying app"
+      - name: Print deployment message
+        run: echo "Deploying app..."
